@@ -22,8 +22,8 @@ public abstract class InputCountGate extends Gate {
      *  @param n the name of the new gate
      *  this is a pass-through to Gate
      */
-    protected InputCountGate( String n ) {
-super( n );
+    protected InputCountGate(String n) {
+	super(n);
     }
 
     /** tell the gate that one of its inputs has changed
@@ -31,7 +31,7 @@ super( n );
      *  @param value the new value of that input
      *  each subclass must implement this method
      */
-    public void inputChange( float now, int value ) {
+    public void inputChange(float now, int value) {
 	if (value == 1) { // it change to 1
 	    inputCount = inputCount + 1;
 	} else { // it changed to 0
@@ -48,7 +48,6 @@ super( n );
                         }
                     }
                 );
-                //update the boolean
                 pendingOutputEvent= true;
             }
 	    oldOutput = newOutput;
@@ -66,5 +65,5 @@ super( n );
      *  @param count the number of ones on the input
      *  each subclass must implement this method
      */
-    public abstract int logicRule( int count );
+    public abstract int logicRule(int count);
 }
